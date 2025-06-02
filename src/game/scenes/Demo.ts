@@ -17,17 +17,26 @@ export class Demo extends Scene
 
     core: Phaser.GameObjects.Image;
     controlRods: Phaser.GameObjects.Image; //do i want to make these seperate? ie reactor/core/ctrl rods
+
+    investigate: Phaser.GameObjects.Image; //prompt to look into game object
     
 
     
     constructor ()
     {
         super('GameOver');
+        new Glow(gameObject, #FFFFFF, 1, 1, false);
     }
 
     create ()
     {
-        
+
+        this.coolingTower = this.add.image(0,0,'coolingTower')
+        this.coolingTower.setInteractive()
+        //when hover, give option to view...prompt enter to view?
+        this.coolingTower.addListener('pointerover', ()=> {
+          this.coolingTower.preFX.addGlow();})
+
 
     }
 }
