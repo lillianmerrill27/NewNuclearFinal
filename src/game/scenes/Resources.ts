@@ -1,16 +1,15 @@
 import { Scene } from 'phaser';
 
-export class Resources extends Scene
-{
-    
-    constructor ()
-    {
-        super('Game');
+export class Resources extends Scene {
+
+    constructor() {
+        super('Resources');
     }
 
-    create ()
-    {
-        
-        
+    create() {
+
+
+        console.log("Enter Resources");
+
     }
 }

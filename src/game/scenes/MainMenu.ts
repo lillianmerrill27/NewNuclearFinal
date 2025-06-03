@@ -1,7 +1,6 @@
 import { Scene, GameObjects } from 'phaser';
 
-export class MainMenu extends Scene
-{
+export class MainMenu extends Scene {
     background: GameObjects.Image;
     logo: GameObjects.Image;
     title: GameObjects.Text;
@@ -9,26 +8,32 @@ export class MainMenu extends Scene
     resources: Phaser.GameObjects.Image;
     credits: Phaser.GameObjects.Image;
 
-    constructor ()
-    {
+    constructor() {
         super('MainMenu');
     }
 
-    create ()
-    {
-        this.startbtn = this.add.image(0,0,'start');
+    preload() {
+        this.load.image("startbtn", "assets/200x75.svg");
+        this.load.image("resources", "assets/200x75.svg");
+        this.load.image("credits", "assets/200x75.svg");
+    }
+
+    create() {
+        console.log("Enter MainMenu");
+
+        this.startbtn = this.add.image(256, 100, 'start');
         this.startbtn.setInteractive()
         this.startbtn.addListener('pointerdown', () => {
             this.scene.start('Demo');
         })
 
-        this.resources = this.add.image(0,0,'resources');
+        this.resources = this.add.image(256, 200, 'resources');
         this.resources.setInteractive()
         this.resources.addListener('pointerdown', () => {
             this.scene.start('Resources');
         })
 
-         this.credits = this.add.image(0,0,'credits');
+        this.credits = this.add.image(256, 300, 'credits');
         this.credits.setInteractive()
         this.credits.addListener('pointerdown', () => {
             this.scene.start('Credits');

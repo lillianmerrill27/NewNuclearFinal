@@ -1,16 +1,15 @@
 import { Scene } from 'phaser';
 
-export class CoolingTwr extends Scene
-{
-    
-    constructor ()
-    {
-        super('Game');
+export class CoolingTwr extends Scene {
+
+    constructor() {
+        super('CoolingTwr');
+
     }
 
-    create ()
-    {
-        
-        
+    create() {
+        console.log("Enter CoolingTwr");
+
+
     }
 }
