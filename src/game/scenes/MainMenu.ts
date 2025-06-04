@@ -21,22 +21,43 @@ export class MainMenu extends Scene {
     create() {
         console.log("Enter MainMenu");
 
-        this.startbtn = this.add.image(256, 100, 'start');
+        let buttonGlow: Phaser.FX.Glow | undefined = undefined;
+
+        this.startbtn = this.add.image(640, 360, 'startbtn');
         this.startbtn.setInteractive()
         this.startbtn.addListener('pointerdown', () => {
             this.scene.start('Demo');
         })
+        this.startbtn.addListener('pointerover', () => {
+            buttonGlow = this.startbtn.preFX?.addGlow;
+        })
 
-        this.resources = this.add.image(256, 200, 'resources');
+        this.startbtn.addListener('pointerout', () => {
+            if (buttonGlow) {
+                this.startbtn.preFX?.remove(buttonGlow);
+            }
+        })
+    //-----    
+
+        this.resources = this.add.image(640, 460, 'resources');
         this.resources.setInteractive()
         this.resources.addListener('pointerdown', () => {
             this.scene.start('Resources');
         })
+        
+        this.resources.addListener('pointerover', () => {
+            buttonGlow = this.startbtn.preFX?.addGlow;
+        })
 
-        this.credits = this.add.image(256, 300, 'credits');
+    //-----
+
+        this.credits = this.add.image(640, 560, 'credits');
         this.credits.setInteractive()
         this.credits.addListener('pointerdown', () => {
             this.scene.start('Credits');
+        })
+        this.credits.addListener('pointerover', () => {
+            
         })
     }
 }
