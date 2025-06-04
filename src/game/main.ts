@@ -12,8 +12,8 @@ import { Credits } from './scenes/Credits';
 //  https://docs.phaser.io/api-documentation/typedef/types-core#gameconfig
 const config: Phaser.Types.Core.GameConfig = {
     type: AUTO,
-    width: 1024,
-    height: 768,
+    width: 1280,
+    height: 720,
     parent: 'game-container',
     backgroundColor: '#028af8',
     scene: [
