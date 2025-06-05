@@ -32,19 +32,22 @@ export class CoolingTwr extends Scene {
             frameRate: 20,
         })
 
-            this.CTanimation.addListener('pointerover', () => {
-                this.playButton = this.add.image(640, 360, 'playButton');
-                this.playButton.setInteractive();
-                this.playButton.addListener('pointerdown', () => {
-                    this.CTanimation.play('coolingTwrAnim');
-                });
+        this.CTanimation.addListener('pointerover', () => {
+            this.playButton = this.add.image(640, 360, 'playButton');
+            this.playButton.setInteractive();
+            this.playButton.addListener('pointerdown', () => {
+                this.CTanimation.play('coolingTwrAnim');
             });
-            this.CTanimation.addListener('pointerout', () => {
-                if (this.playButton) {
-                    this.playButton.destroy();
-                }
-            });
+        });
+            
+        this.CTanimation.addListener('pointerout', () => {
+            if (this.playButton) {
+                this.playButton.destroy();
+            }
+        });
 
     
-        }
     }
+
+    
+}
