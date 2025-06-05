@@ -28,7 +28,7 @@ export class CoolingTwr extends Scene {
 
         this.anims.create({
             key: 'coolingTwrAnim',
-            frames: this.anims.generateFrameNumbers('CT', { start: 0, end : 28}),
+            frames: this.anims.generateFrameNumbers('CT', { start: 0, end : 27}),
             frameRate: 20,
         })
 
@@ -49,5 +49,5 @@ export class CoolingTwr extends Scene {
     
     }
 
-    
+
 }
