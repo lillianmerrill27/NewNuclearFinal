@@ -26,13 +26,13 @@ export class Demo extends Scene {
     }
 
     preload() {
-        this.load.image("coolingTower", "assets/600x400.svg")
+        this.load.image("coolingTower", "assets/320x480.svg")
     }
 
     create() {
         console.log("Enter Demo");
         //cooling tower
-        this.coolingTower = this.add.image(100, 100, 'coolingTower')
+        this.coolingTower = this.add.image(350, 425, 'coolingTower')
         this.coolingTower.setInteractive()
         let coolingTowerGlow: Phaser.FX.Glow | undefined = undefined;
         //when hover, give option to view...prompt enter to view?

@@ -29,7 +29,7 @@ export class MainMenu extends Scene {
             this.scene.start('Demo');
         })
         this.startbtn.addListener('pointerover', () => {
-            buttonGlow = this.startbtn.preFX?.addGlow;
+            buttonGlow = this.startbtn.preFX?.addGlow();
         })
 
         this.startbtn.addListener('pointerout', () => {
@@ -46,7 +46,13 @@ export class MainMenu extends Scene {
         })
         
         this.resources.addListener('pointerover', () => {
-            buttonGlow = this.startbtn.preFX?.addGlow;
+            buttonGlow = this.resources.preFX?.addGlow();
+        })
+
+        this.resources.addListener('pointerout', () => {
+            if (buttonGlow) {
+                this.resources.preFX?.remove(buttonGlow);
+            }
         })
 
     //-----
@@ -57,7 +63,13 @@ export class MainMenu extends Scene {
             this.scene.start('Credits');
         })
         this.credits.addListener('pointerover', () => {
-            
+            buttonGlow = this.credits.preFX?.addGlow();
+        })
+
+        this.credits.addListener('pointerout', () => {
+            if (buttonGlow) {
+                this.credits.preFX?.remove(buttonGlow);
+            }
         })
     }
 }
