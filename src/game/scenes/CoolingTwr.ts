@@ -4,26 +4,26 @@ export class CoolingTwr extends Scene {
 
     background: Phaser.GameObjects.Image;
     CTanimation: Phaser.GameObjects.Sprite;
-    playButton: Phaser.GameObjects.Image;
+    playButton: Phaser.GameObjects.Image | undefined;
 
     constructor() {
         super('CoolingTwr');
     
     }
 
-    preloader() {
+    preload() {
         this.load.image("coolingTwrBackground", "assets/cooling_tower_background.svg");
         this.load.spritesheet("CT", "assets/thermally-agitated.png", {
             frameWidth: 280,
             frameHeight: 280,
         });
-        this.load.image("playButton", "assets/play_button.svg");
+        this.load.image("playButton", "assets/play_button.png");
     }
 
     create() {
         console.log("Enter CoolingTwr");
         this.CTanimation = this.add.sprite(640, 360, 'CT');
-        this.CTanimation.setScale(15);
+        this.CTanimation.setScale(2);
         this.CTanimation.setInteractive();
 
         this.anims.create({
@@ -43,6 +43,7 @@ export class CoolingTwr extends Scene {
         this.CTanimation.addListener('pointerout', () => {
             if (this.playButton) {
                 this.playButton.destroy();
+                this.playButton = undefined;
             }
         });
 
