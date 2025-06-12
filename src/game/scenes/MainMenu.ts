@@ -13,7 +13,7 @@ export class MainMenu extends Scene {
     }
 
     preload() {
-        this.load.image("startbtn", "assets/buttonbase.png");
+        this.load.image("startbtn", "assets/demobutton.png");
         this.load.image("resources", "assets/buttonbase.png");
         this.load.image("credits", "assets/buttonbase.png");
     }
@@ -25,6 +25,7 @@ export class MainMenu extends Scene {
 
         this.startbtn = this.add.image(640, 360, 'startbtn');
         this.startbtn.setInteractive()
+        this.startbtn.setScale(1.5);
         this.startbtn.addListener('pointerdown', () => {
             this.scene.start('Demo');
         })
@@ -41,6 +42,7 @@ export class MainMenu extends Scene {
 
         this.resources = this.add.image(640, 460, 'resources');
         this.resources.setInteractive()
+        this.resources.setScale(1.5);
         this.resources.addListener('pointerdown', () => {
             this.scene.start('Resources');
         })
@@ -59,6 +61,7 @@ export class MainMenu extends Scene {
 
         this.credits = this.add.image(640, 560, 'credits');
         this.credits.setInteractive()
+        this.credits.setScale(1.5);
         this.credits.addListener('pointerdown', () => {
             this.scene.start('Credits');
         })
