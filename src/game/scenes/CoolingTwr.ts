@@ -13,9 +13,10 @@ export class CoolingTwr extends Scene {
 
     preload() {
         this.load.image("coolingTwrBackground", "assets/cooling_tower_background.svg");
-        this.load.spritesheet("CT", "assets/thermally-agitated.png", {
-            frameWidth: 280,
-            frameHeight: 280,
+        this.load.spritesheet("CT", "assets/COOLINGTOWER-Sheet.png", {
+            frameWidth: 256,
+            frameHeight: 128,
+            pixelArt: true,
         });
         this.load.image("playButton", "assets/play_button.png");
     }
@@ -23,13 +24,13 @@ export class CoolingTwr extends Scene {
     create() {
         console.log("Enter CoolingTwr");
         this.CTanimation = this.add.sprite(640, 360, 'CT');
-        this.CTanimation.setScale(2);
+        this.CTanimation.setScale(3.5);
         this.CTanimation.setInteractive();
 
         this.anims.create({
             key: 'coolingTwrAnim',
             frames: this.anims.generateFrameNumbers('CT', { start: 0, end : 27}),
-            frameRate: 20,
+            frameRate: 10,
         })
 
         this.CTanimation.addListener('pointerover', () => {
