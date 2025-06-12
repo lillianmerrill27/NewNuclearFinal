@@ -13,9 +13,9 @@ export class MainMenu extends Scene {
     }
 
     preload() {
-        this.load.image("startbtn", "assets/200x75.svg");
-        this.load.image("resources", "assets/200x75.svg");
-        this.load.image("credits", "assets/200x75.svg");
+        this.load.image("startbtn", "assets/buttonbase.png");
+        this.load.image("resources", "assets/buttonbase.png");
+        this.load.image("credits", "assets/buttonbase.png");
     }
 
     create() {

@@ -8,7 +8,7 @@ export class CoolingTwr extends Scene {
 
     constructor() {
         super('CoolingTwr');
-    
+
     }
 
     preload() {
@@ -16,7 +16,6 @@ export class CoolingTwr extends Scene {
         this.load.spritesheet("CT", "assets/COOLINGTOWER-Sheet.png", {
             frameWidth: 256,
             frameHeight: 128,
-            pixelArt: true,
         });
         this.load.image("playButton", "assets/play_button.png");
     }
@@ -29,7 +28,7 @@ export class CoolingTwr extends Scene {
 
         this.anims.create({
             key: 'coolingTwrAnim',
-            frames: this.anims.generateFrameNumbers('CT', { start: 0, end : 27}),
+            frames: this.anims.generateFrameNumbers('CT', { start: 0, end: 27 }),
             frameRate: 10,
         })
 
@@ -40,7 +39,7 @@ export class CoolingTwr extends Scene {
                 this.CTanimation.play('coolingTwrAnim');
             });
         });
-            
+
         this.CTanimation.addListener('pointerout', () => {
             if (this.playButton) {
                 this.playButton.destroy();
@@ -48,7 +47,7 @@ export class CoolingTwr extends Scene {
             }
         });
 
-    
+
     }
 
 
